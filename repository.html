@@ -1,0 +1,537 @@
+<!doctype html>
+<html>
+<head>
+  <!-- ... -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./static/css/styles.css" rel="stylesheet">
+</head>
+<body class="w-screen h-full overflow-x-hidden">
+  <div id="nav-bar" class="w-full flex bg-green-100">
+      <div class="w-full flex mt-4 mb-4">
+        <img src="static/media/images/logo.png" class="h-48 my-3 ml-3">
+        <div id="menu" class="flex flex-grow justify-evenly items-center gap-x-3 m-0 p-0 text-4xl">
+          <p><a href="index.html" class="no-underline hover:underline">Home</a></p>
+          <p><a href="repository.html" class="no-underline hover:underline">Repository</a></p>
+          <p><a href="contact.asp" class="no-underline hover:underline">BioSafety</a></p>
+          <p><a href="about.asp" class="no-underline hover:underline">Contact Us</a></p>
+        </div>
+      </div>
+  </div>
+  <div id="hide-content" class="">
+    <div id="content" class="flex m-4 text-3xl">
+      <div class="flex flex-grow">
+        <form class="flex-grow">
+            <select id="select-database" class="p-2 bg-green-100" onchange=selectionDatabase()>
+                <option value="">Choose category of Database</option>
+                <option value="organism">Organism</option>
+                <option value="gene">Gene</option>
+                <option value="product">Product</option>
+                <option value="conditions">Conditions</option>
+            </select>
+        </form>
+        <div id="search-bar" class="flex-grow text-3xl">
+          <input type="text" class="border-2 p-2" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+    <div class="h-44">
+    </div>
+    <div class="flex pl-4 text-3xl">
+      <p id="te" class="invisible">You chose <span class="text-red-700" id="selection-text"></span></p>
+    </div>
+    <div class="grid grid-cols-3 m-4 text-3xl">
+      <form id="select-0" class="invisible">
+        <select name="product-database" id="selection-0" class="p-2 bg-green-100" onchange=dropdown(this.id)>
+            
+        </select>
+      </form>
+      <form id="select-1" class="invisible">
+        <select name="product-organism" id="selection-1" class="p-2 bg-green-100" onchange=dropdown(this.id)>
+      
+        </select>
+      </form>
+      <form id="select-2" class="invisible">
+        <select name="product-organism" id="selection-2" class="p-2 bg-green-100" onchange=dropdown(this.id)>
+            
+        </select>
+      </form>
+    </div>
+    <div class="h-40">
+    </div>
+    <button id="next-button" class="bg-green-100 ml-4 text-3xl invisible px-8 py-4 rounded-md" onclick=gotoPlasmids()>Next</button>
+  </div>
+  <div id="display-genes" class="hidden flex flex-col">
+    <div class="flex pl-4 text-3xl pb-8">
+      <p class="" id="show-genes">You chose 
+        
+      </p>
+    </div>
+    <div class="flex pl-4 text-3xl">
+      <p class="" id="paragraph-genes">The following organisms have been documented for the use of 
+     
+      </p>
+    </div>
+    <ol class="list-decimal list-inside text-3xl pl-8 pt-8">
+      <li class="pb-12" id="bacteria-1">Chlamydomonas reinhardtii <button id="bac-1-button" class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
+      <li class="pb-12" id="bacteria-2">Oxyrrhis marina <button id="bac-2-button" class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
+      <li class="pb-12" id="bacteria-3">Symbiodinium<button id="bac-3-button" class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
+    </ol>
+  </div>
+  <div id="display-info" class="hidden">
+    <div class="flex pl-4 text-3xl pb-8">
+      <p class="" id="chosen-plasmid">You chose 
+      
+      </p>
+    </div>
+    <div class="flex" id="display-all">
+      <div class="flex flex-col pl-4 text-3xl pb-8">
+        <p class="text-3xl">
+          The following plasmid has been generated:
+        </p>
+        <img id="plasmid-image" class="w-80 mt-8">
+        <button class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md">See more</button>
+        <p>
+          Reference: CO2 Snatchers
+        </p>
+      </div>
+      <div class="flex flex-col pl-4 text-3xl pb-8">
+        <p class="text-3xl">
+          The expected behaviour follows this model:
+        </p>
+        <img src="static/media/images/model.jpeg" class="w-80 mt-8">
+        <button>See more</button>
+        <p>
+          Reference: CO2 Snatchers
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col" id="information">
+      <div class="grid grid-cols-2 ml-4 hidden" id="plasmid-info">
+        
+          <img src="test.png" class="w-80 mt-8">
+        
+          <p class="text-3xl">
+            Description:<br>
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+              culpa qui officia deserunt mollit anim id est laborum.</span>
+          </p>
+      </div>
+      <div class="grid grid-cols-2 ml-4 hidden" id="model-info">
+        
+        <img src="test2.png" class="w-80 mt-8">
+      
+        <p class="text-3xl">
+          Description:<br>
+          <span>Following the model from ..--,,..--.. , an expected behaviour for “gene 1” was simulated.</span>
+        </p>
+    </div>
+      <p class="text-3xl ml-4">
+        Reference: CO2 Snatchers
+        <span id="uni-1">university</span>
+        <span id="res-1">researcher</span>
+        <span id="uni-2">university</span>
+      </p>
+    </div>
+  </div>
+</body>
+<script>
+var data = {
+    first : {
+        name: "pAM4787-CA2",
+        geneexpression : "(CA2 - carbon anhydrase - CO2 fixation)",
+        organism : "Chlamydomonas",
+        description : "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of the CA2 carbon anhydrase gene.",
+        route : "static/media/images/plasmid0.jpeg"
+    },
+    1 : {
+        "name": "pAM4787-PEPC",
+        "geneexpression" : "(PEPC - phosphoenolpyruvate carboxylase - CO2 fixation)",
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of the PEPC phosphoenolpyruvate carboxylase gene.",
+        "route" : "static/media/images/plasmid1.jpeg"
+    },
+    2: {
+        "name": "pAM4787-CA2-PEPC",
+        "geneexpression" : ["Gene 1: (CA2 - carbon anhydrase - CO2 fixation)",
+        "Gene 2: (PEPC - phosphoenolpyruvate carboxylase - CO2 fixation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of both CA2 and PEPC genes. It is expected that the combination of both genes will enhance the fixation of CO2. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between both genes.",
+        "route" : "static/media/images/plasmid2.jpeg"
+    },
+    3: {
+        "name": "pCambia1300-Pac1-indA-indB-indC-pecM",
+        "geneexpression" : ["Gene 1: (indA - glycosynthase (?) - indigoidine production)",
+        "Gene 2: (indB - phosphatase (?) - indigoidine production)",
+        "Gene 3: (indC - non-ribosomal peptide synthetase - indigoidine production)",
+        "Gene 4: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of all genes involved in the production and exportation of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid3.jpeg"
+    },
+    "4": {
+        "name": "pCambia1300-Pac1-indA-indB-pecM",
+        "geneexpression" : ["Gene 1: (indA - glycosynthase (?) - indigoidine production)",
+        "Gene 2: (indB - phosphatase (?) - indigoidine production)",
+        "Gene 3: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of genes involved in the production (indA and indB) and exportation (pecM) of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid4.jpeg"
+    },
+    "5": {
+        "name": "pCambia1300-Pac1-indA-indC-pecM",
+        "geneexpression" : ["Gene 1: (indA - glycosynthase (?) - indigoidine production)",
+        "Gene 2: (indC - non-ribosomal peptide synthetase - indigoidine production)",
+        "Gene 3: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of all genes involved in the production (indA and indC) and exportation (pecM) of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid5.jpeg"
+    },
+    "6": {
+        "name": "pCambia1300-Pac1-indB-indC-pecM",
+        "geneexpression" : ["Gene 1: (indB - phosphatase (?) - indigoidine production)",
+        "Gene 2: (indC - non-ribosomal peptide synthetase - indigoidine production)",
+        "Gene 3: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of all genes involved in the production (indB and indC) and exportation (pecM) of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid6.jpeg"
+    },
+    "7": {
+        "name" : "DinoIII-CA2-pUC",
+        "geneexpression" :"(CA2 - carbon anhydrase - CO2 fixation)",
+        "organism" :"Oxyrrhis marina",
+        "description" : "DinoIII-CA2 is a dinoflagellate expression system  for a dinoflagellate delta class carbonic anhydrase 2 as a mechanism of carbon dioxide concentration. This carbonic anhydrase isoform is so far found only in marine algae and associated in plasma membranes for the interconversion of HCO3− ions and CO2. The expressión cassette contain a predicted signal peptide followed by a signal peptidase site. ",
+        "route" : "static/media/images/plasmid7.jpeg"
+    },
+    "8": {
+        "name" : "DinoIII-CA2-pUC",
+        "geneexpression" :"(CA2 - carbon anhydrase - CO2 fixation)",
+        "organism" :"Symbiodinium",
+        "description" : "DinoIII-CA2 is a dinoflagellate expression system  for a dinoflagellate delta class carbonic anhydrase 2 as a mechanism of carbon dioxide concentration. This carbonic anhydrase isoform is so far found only in marine algae and associated in plasma membranes for the interconversion of HCO3− ions and CO2. The expressión cassette contain a predicted signal peptide followed by a signal peptidase site. ",
+        "route" : "static/media/images/plasmid7.jpeg"
+    },
+    "9": {
+        "name" :"DinoIII-pUC-Lcf",
+        "geneexpression" :"Lcf- Luciferase",
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates.",
+        "route" :"static/media/images/plasmid8.jpeg"
+    },
+    "10" : {
+        "name" :"DinoIII-pUC-Lcf",
+        "geneexpression" :"Lcf- Luciferase",
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates.",
+        "route" :"static/media/images/plasmid8.jpeg"
+    },
+    "11": {
+        "name" :"DinoIII-pUC-Lcf-CA2",
+        "geneexpression" :["Gene 1: CA2-carbonic anhydrase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid9.jpeg"
+    },
+    "12": {
+        "name" :"DinoIII-pUC-Lcf-CA2",
+        "geneexpression" :["Gene 1: CA2-carbonic anhydrase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid9.jpeg"
+    },
+    "13": {
+        "name" :"DinoIII-pUC-Lcf-PEPC",
+        "geneexpression" :["Gene 1: PEPC-phosphoenolpyruvate carboxylase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the PEPC gene in charge of CO2 fixation in microalgae. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid10.jpeg"
+    },
+    "14": {
+        "name" :"DinoIII-pUC-Lcf-PEPC",
+        "geneexpression" :["Gene 1: PEPC-phosphoenolpyruvate carboxylase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the PEPC gene in charge of CO2 fixation in microalgae. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid10.jpeg"
+    },
+    "15": {
+        "name" :"DinoIII-pUC-Lcf-CA2-PEPC",
+        "geneexpression" :["Gene 1: CA2- carbonic anhydrase",
+        "Gene 2: PEPC- phosphoenolpyruvate carboxylase",
+        "Gene 3: Lcf- Luciferase"],
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence, as well as the PEPC gene in charge of CO2 fixation in microalgae and the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid11.jpeg"
+    },
+    "16": {
+        "name" :"DinoIII-pUC-Lcf-CA2-PEPC",
+        "geneexpression" :["Gene 1: CA2- carbonic anhydrase",
+        "Gene 2: PEPC- phosphoenolpyruvate carboxylase",
+        "Gene 3: Lcf- Luciferase"],
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence, as well as the PEPC gene in charge of CO2 fixation in microalgae and the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid11.jpeg"
+    }
+};
+  
+  function selectionDatabase(){ 
+    let selDatabase = document.getElementById("select-database").value;
+    let disDatabase = document.getElementById("select-database").options[document.getElementById("select-database").selectedIndex].text
+    document.getElementById("selection-text").innerHTML = " " + disDatabase + " Database";
+    document.getElementById("te").classList.toggle("invisible", false);
+    document.getElementById("next-button").classList.toggle("invisible", false);
+    if (selDatabase == "product"){
+      document.getElementById("select-0").classList.toggle("invisible", false);
+      document.getElementById("select-1").classList.toggle("invisible", false);
+      document.getElementById("select-2").classList.toggle("invisible", true);
+      document.getElementById("selection-0").innerHTML = '<option value="">Choose Product</option>'
+      + '<option value="indigoguidine">Indigoguidine</option>'
+      + '<option value="luciferase">Luciferase</option>'
+      + '<option value="biofertilizer">Biofertilizer</option>';
+    }
+    else if (selDatabase == "conditions"){
+      document.getElementById("select-0").classList.toggle("invisible", false);
+      document.getElementById("select-1").classList.toggle("invisible", false);
+      document.getElementById("select-2").classList.toggle("invisible", true);
+      document.getElementById("selection-0").innerHTML = '<option value="">Choose Condition</option>'
+      + '<option value="min-temp">Min Temperature</option>'
+      + '<option value="max-temp">Max Temperature</option>'
+      + '<option value="photoperiod">Photoperiod</option>';
+      document.getElementById("selection-1").innerHTML = '<option value="">Choose Organism</option>'
+      + '<option value="org-1">Organism 1</option>'
+      + '<option value="org-2">Organism 2</option>'
+      + '<option value="org-3">Organism 3</option>';
+    }
+    else if (selDatabase == "gene"){
+      document.getElementById("select-0").classList.toggle("invisible", false);
+      document.getElementById("selection-0").innerHTML = '<option value="">Choose Gene 1</option>'
+      + '<option value="sele-gen0">CA2 - carbon anhydrase</option>'
+      + '<option value="sele-gen1">PEPC - phosphoenolpyruvate carboxylase</option>'
+      + '<option value="sele-gen2">Lcf - Luciferase</option>'
+      + '<option value="sele-gen3">indA - glycosynthase (?) </option>'
+      + '<option value="sele-gen4">indB - phosphatase (?) </option>';
+    }
+  }
+  function dropdown(dropdownId){
+    if (dropdownId == "selection-0") {
+      let selDatabase = document.getElementById("selection-0").value;
+      document.getElementById("select-1").classList.toggle("invisible", true);
+      document.getElementById("select-2").classList.toggle("invisible", true);
+      let disDatabase = document.getElementById("selection-0").options[document.getElementById("selection-0").selectedIndex].text
+      switch(selDatabase) {
+        case "sele-gen0":
+          document.getElementById("select-1").classList.toggle("invisible", false);
+          document.getElementById("selection-1").innerHTML = '<option value="">Choose Gene 2</option>'
+            + '<option value="sele1-gen0">None</option>'
+            + '<option value="sele1-gen1">PEPC - phosphoenolpyruvate carboxylase</option>'
+            + '<option value="sele1-gen2">Lcf - Luciferase</option>';
+          break;
+        case "sele-gen1":
+          document.getElementById("select-1").classList.toggle("invisible", false);
+          document.getElementById("selection-1").innerHTML = '<option value="">Choose Gene 2</option>'
+            + '<option value="sele1-gen0">None</option>'
+            + '<option value="sele1-gen2">Lcf - Luciferase</option>';
+          break;
+        case "sele-gen2":
+          document.getElementById("select-1").classList.toggle("invisible", false);
+          document.getElementById("selection-1").innerHTML = '<option value="">Choose Gene 2</option>'
+            + '<option value="sele1-gen0">None</option>';
+          break;
+        case "sele-gen3":
+          document.getElementById("select-1").classList.toggle("invisible", false);
+          document.getElementById("selection-1").innerHTML = '<option value="">Choose Gene 2</option>'
+            + '<option value="sele1-gen3">indB - phosphatase (?)</option>'
+            + '<option value="sele1-gen4">indC - non-ribosomal peptide synthetase</option>';
+          break;
+        case "sele-gen4":
+          document.getElementById("select-1").classList.toggle("invisible", false);
+          document.getElementById("selection-1").innerHTML = '<option value="">Choose Gene 2</option>'
+            + '<option value="sele1-gen4">indC - non-ribosomal peptide synthetase</option>';
+          break;
+        default:
+            break;
+      }
+    }
+    if (dropdownId == "selection-1") {
+      let selDatabase = document.getElementById("selection-1").value;
+      let disDatabase = document.getElementById("selection-1").options[document.getElementById("selection-1").selectedIndex].text
+      document.getElementById("select-2").classList.toggle("invisible", true);
+      switch (selDatabase) {
+        case "sele1-gen0":
+          document.getElementById("select-2").classList.toggle("invisible", false);
+          document.getElementById("selection-2").innerHTML = '<option value="">Choose Gene 3</option>'
+            + '<option value="sele2-gen0">None</option>';
+          break;
+        case "sele1-gen1":
+          document.getElementById("select-2").classList.toggle("invisible", false);
+          document.getElementById("selection-2").innerHTML = '<option value="">Choose Gene 3</option>'
+            + '<option value="sele2-gen0">None</option>'
+            + '<option value="sele2-gen1">Lcf - Luciferase</option>';
+          break;
+        case "sele1-gen2":
+          document.getElementById("select-2").classList.toggle("invisible", false);
+          document.getElementById("selection-2").innerHTML = '<option value="">Choose Gene 3</option>'
+            + '<option value="sele2-gen0">None</option>';
+          break;
+        case "sele1-gen3":
+          document.getElementById("select-2").classList.toggle("invisible", false);
+          document.getElementById("selection-2").innerHTML = '<option value="">Choose Gene 3</option>'
+            + '<option value="sele2-gen2">indC + pecM - metabolite exporter</option>'
+            + '<option value="sele2-gen3">pecM - metabolite exporter </option>';
+          break;
+        case "sele1-gen4":
+          document.getElementById("select-2").classList.toggle("invisible", false);
+          document.getElementById("selection-2").innerHTML = '<option value="">Choose Gene 3</option>'
+            + '<option value="sele2-gen3">pecM - metabolite exporter</option>';
+          break;
+      }
+    }
+  }
+  function gotoPlasmids() {
+    let selDatabase = document.getElementById("selection-0").value;
+    let disDatabase = document.getElementById("selection-0").options[document.getElementById("selection-0").selectedIndex].text
+    let selDatabase1 = document.getElementById("selection-1").value;
+    let disDatabase1 = document.getElementById("selection-1").options[document.getElementById("selection-1").selectedIndex].text
+    let selDatabase2 = document.getElementById("selection-2").value;
+    let disDatabase2 = document.getElementById("selection-2").options[document.getElementById("selection-2").selectedIndex].text
+    document.getElementById("display-genes").classList.toggle("hidden",false);
+    document.getElementById("hide-content").classList.toggle("hidden",true);
+    if (disDatabase1 == "None") {
+      document.getElementById("show-genes").innerHTML += '<span class="text-red-700" id="gen-display-0">'
+      +disDatabase+'</span>.';
+      document.getElementById("paragraph-genes").innerHTML += '<span class="text-red-700" id="gen-par-0">'
+      +disDatabase+'</span>:';
+    }
+    else {
+      if (disDatabase2 == "None") {
+        document.getElementById("show-genes").innerHTML += '<span class="text-red-700" id="gen-display-0">'
+        +disDatabase+' </span>and<span class="text-red-700" id="gen-display-1"> '
+        +disDatabase1+' </span>.';
+        document.getElementById("paragraph-genes").innerHTML += '<span class="text-red-700" id="gen-par-0">'
+        +disDatabase+' </span>and<span class="text-red-700" id="gen-par-1"> '
+        +disDatabase1+'</span>:';
+      }
+      else {
+        document.getElementById("show-genes").innerHTML += '<span class="text-red-700" id="gen-display-0">'
+        +disDatabase+'</span>, <span class="text-red-700" id="gen-display-1"> '
+        +disDatabase1+' </span>and<span class="text-red-700" id="gen-display-2"> '
+        +disDatabase2+'</span>.';
+        document.getElementById("paragraph-genes").innerHTML += '<span class="text-red-700" id="gen-par-0">'
+        +disDatabase+'</span>, <span class="text-red-700" id="gen-par-1"> '
+        +disDatabase1+' </span>and<span class="text-red-700" id="gen-par-2"> '
+        +disDatabase2+'</span>:';
+      }
+    }
+    switch (selDatabase) {
+      case "sele-gen0":
+        switch (selDatabase1) {
+            case "sele1-gen0":
+              document.getElementById("bacteria-1").classList.toggle("hidden",false);
+              document.getElementById("bacteria-2").classList.toggle("hidden",false);
+              document.getElementById("bacteria-3").classList.toggle("hidden",false);
+              break;
+            case "sele1-gen1":
+              if (disDatabase2 == "None"){
+                document.getElementById("bacteria-1").classList.toggle("hidden",false);
+                document.getElementById("bacteria-2").classList.toggle("hidden",true);
+                document.getElementById("bacteria-3").classList.toggle("hidden",true);
+                break;
+              }
+              else {
+                document.getElementById("bacteria-1").classList.toggle("hidden",true);
+                document.getElementById("bacteria-2").classList.toggle("hidden",false);
+                document.getElementById("bacteria-3").classList.toggle("hidden",false);
+                break;
+              }
+            case "sele1-gen2":
+              document.getElementById("bacteria-1").classList.toggle("hidden",true);
+              document.getElementById("bacteria-2").classList.toggle("hidden",false);
+              document.getElementById("bacteria-3").classList.toggle("hidden",false);
+              break;
+            default:
+              break;
+          }
+        break;
+      case "sele-gen1":
+        if (selDatabase1 == "sele1-gen0") {
+          document.getElementById("bacteria-1").classList.toggle("hidden",false);
+          document.getElementById("bacteria-2").classList.toggle("hidden",true);
+          document.getElementById("bacteria-3").classList.toggle("hidden",true);
+          break;
+          }
+        else {
+          document.getElementById("bacteria-1").classList.toggle("hidden",true);
+          document.getElementById("bacteria-2").classList.toggle("hidden",false);
+          document.getElementById("bacteria-3").classList.toggle("hidden",false);
+          break;
+        }
+      case "sele-gen2":
+        document.getElementById("bacteria-1").classList.toggle("hidden",true);
+        document.getElementById("bacteria-2").classList.toggle("hidden",false);
+        document.getElementById("bacteria-3").classList.toggle("hidden",false);
+        break;
+      case "sele-gen3":
+        document.getElementById("bacteria-1").classList.toggle("hidden",false);
+        document.getElementById("bacteria-2").classList.toggle("hidden",true);
+        document.getElementById("bacteria-3").classList.toggle("hidden",true);  
+        break;
+      case "sele-gen4":
+        document.getElementById("bacteria-1").classList.toggle("hidden",false);
+        document.getElementById("bacteria-2").classList.toggle("hidden",true);
+        document.getElementById("bacteria-3").classList.toggle("hidden",true);  
+        break;
+      default:
+        break;
+    }
+
+  }
+  function plasmidSelected(plasmidId) {
+    let selDatabase = document.getElementById("selection-0").value;
+    let disDatabase = document.getElementById("selection-0").options[document.getElementById("selection-0").selectedIndex].text
+    let selDatabase1 = document.getElementById("selection-1").value;
+    let disDatabase1 = document.getElementById("selection-1").options[document.getElementById("selection-1").selectedIndex].text
+    let selDatabase2 = document.getElementById("selection-2").value;
+    let disDatabase2 = document.getElementById("selection-2").options[document.getElementById("selection-2").selectedIndex].text
+    let plasmidName = document.getElementById(plasmidId).parentElement.innerText.replace(" choose", "");
+    document.getElementById("display-genes").classList.toggle("hidden",true);
+    document.getElementById("display-info").classList.toggle("hidden",false);
+    
+    if (disDatabase1 == "None") {
+      document.getElementById("chosen-plasmid").innerHTML += '<span class="text-red-700" id="gen-display-0">'
+      +disDatabase+'</span> with the organism <span class="text-red-700" id="gen-display-0">'+
+      plasmidName+'</span>.';
+    }
+    else {
+      if (disDatabase2 == "None") {
+        document.getElementById("chosen-plasmid").innerHTML += '<span class="text-red-700" id="gen-display-0">'
+        +disDatabase+' </span>and<span class="text-red-700" id="gen-display-1"> '
+        +disDatabase1+' </span> with the organism <span class="text-red-700" id="gen-display-0">'+
+      plasmidName+'</span>.';
+      }
+      else {
+        document.getElementById("chosen-plasmid").innerHTML += '<span class="text-red-700" id="gen-display-0">'
+        +disDatabase+'</span>, <span class="text-red-700" id="gen-display-1"> '
+        +disDatabase1+' </span>and<span class="text-red-700" id="gen-display-2"> '
+        +disDatabase2+'</span> with the organism <span class="text-red-700" id="gen-display-0">'+
+      plasmidName+'</span>.';
+      }
+    }
+    if (selDatabase == "sele-gen0") {
+      if (selDatabase1 == "sele1-gen0") {
+        if (selDatabase2 == "sele2-gen0") {
+          document.getElementById("plasmid-image").src = data.first.route;
+        }
+      }
+    }
+  }
+  
+</script>
+
+</html>

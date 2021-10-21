@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+  <!-- ... -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./static/css/styles.css" rel="stylesheet">
+</head>
+<body class="w-screen h-full overflow-x-hidden">
+  <div id="nav-bar" class="w-full flex bg-green-100">
+      <div class="w-full flex mt-4 mb-4">
+        <img src="static/media/images/logo.png" class="h-48 my-3 ml-3">
+        <div id="menu" class="flex flex-grow justify-evenly items-center gap-x-3 m-0 p-0 text-4xl">
+          <p><a href="index.html" class="no-underline hover:underline">Home</a></p>
+          <p><a href="repository.html" class="no-underline hover:underline">Repository</a></p>
+          <p><a href="contact.asp" class="no-underline hover:underline">BioSafety</a></p>
+          <p><a href="about.asp" class="no-underline hover:underline">Contact Us</a></p>
+        </div>
+      </div>
+  </div>
+  <div id="content" class="flex flex-col m-4">
+    <div id="mission-vision" class="flex">
+      <div>
+        <p class="text-3xl mr-2 mb-4 text-center">Mission
+        </p>
+        <span class="text-base text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna 
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          Duis aute irure dolor in reprehenderit in voluptate velit 
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+          sint occaecat cupidatat non proident, sunt in culpa qui 
+          officia deserunt mollit anim id est laborum.
+        </span>
+      </div>
+      <div>
+        <p class="text-3xl ml-2 mb-4 text-center">Vision
+        </p>
+        <span class="text-base text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna 
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          Duis aute irure dolor in reprehenderit in voluptate velit 
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+          sint occaecat cupidatat non proident, sunt in culpa qui 
+          officia deserunt mollit anim id est laborum.
+        </span>
+      </div>
+        
+    </div>
+    
+    <div class="pic-ctn mt-8" style="height: 25em">
+      <img src="static/media/gifs/gif.gif" alt="" class="pic h-96 ">
+      <img src="static/media/gifs/gif1.gif" alt="" class="pic h-96">
+    </div>
+
+  </div>
+  <footer id="footer" class="flex w-full justify-evenly bg-green-100">
+    <div class="flex flex-col items-center mt-1 mb-1">
+      <p class="mt-1 mb-1">Social Media</p>
+      <a href="https://www.instagram.com/co2snatchers/?utm_medium=copy_link" target="_blank">
+        <img src="./static/media/icons/instagram-seeklogo.com.svg" alt="" class="h-8 w-8 justify-self-center">
+      </a>
+    </div>
+    <div class="flex flex-col mt-1 mb-1">
+      <p>Contact</p>
+    </div>
+    <div class="flex flex-col mt-1 mb-1">
+      <p>Sponsors</p>
+    </div>
+    <div class="flex flex-col mt-1 mb-1">
+      <p>About Us</p>
+    </div>
+  </footer>
+</body>
+<style>
+  .pic-ctn {
+  width: 50vw;
+  height: 100px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(-200px);
+    opacity: 1;
+  }
+  15% {
+    transform: translateX(-200px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position: relative;
+  width: 100vw;
+  height: 100px;
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 20 ;
+  left: 500px;
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 6s;
+}
+</style>
+</html>

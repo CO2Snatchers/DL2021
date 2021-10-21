@@ -1,0 +1,139 @@
+{
+    "0" : {
+        "name": "pAM4787-CA2",
+        "gene-expression" : "(CA2 - carbon anhydrase - CO2 fixation)",
+        "organism" : "Chlamydomonas",
+        "description" : "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of the CA2 carbon anhydrase gene.",
+        "route" : "static/media/images/plasmid0.jpeg"
+    },
+    "1" : {
+        "name": "pAM4787-PEPC",
+        "gene-expression" : "(PEPC - phosphoenolpyruvate carboxylase - CO2 fixation)",
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of the PEPC phosphoenolpyruvate carboxylase gene.",
+        "route" : "static/media/images/plasmid1.jpeg"
+    },
+    "2": {
+        "name": "pAM4787-CA2-PEPC",
+        "gene-expression" : ["Gene 1: (CA2 - carbon anhydrase - CO2 fixation)",
+        "Gene 2: (PEPC - phosphoenolpyruvate carboxylase - CO2 fixation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of both CA2 and PEPC genes. It is expected that the combination of both genes will enhance the fixation of CO2. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between both genes.",
+        "route" : "static/media/images/plasmid2.jpeg"
+    },
+    "3": {
+        "name": "pCambia1300-Pac1-indA-indB-indC-pecM",
+        "gene-expression" : ["Gene 1: (indA - glycosynthase (?) - indigoidine production)",
+        "Gene 2: (indB - phosphatase (?) - indigoidine production)",
+        "Gene 3: (indC - non-ribosomal peptide synthetase - indigoidine production)",
+        "Gene 4: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of all genes involved in the production and exportation of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid3.jpeg"
+    },
+    "4": {
+        "name": "pCambia1300-Pac1-indA-indB-pecM",
+        "gene-expression" : ["Gene 1: (indA - glycosynthase (?) - indigoidine production)",
+        "Gene 2: (indB - phosphatase (?) - indigoidine production)",
+        "Gene 3: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of genes involved in the production (indA and indB) and exportation (pecM) of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid4.jpeg"
+    },
+    "5": {
+        "name": "pCambia1300-Pac1-indA-indC-pecM",
+        "gene-expression" : ["Gene 1: (indA - glycosynthase (?) - indigoidine production)",
+        "Gene 2: (indC - non-ribosomal peptide synthetase - indigoidine production)",
+        "Gene 3: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of all genes involved in the production (indA and indC) and exportation (pecM) of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid5.jpeg"
+    },
+    "6": {
+        "name": "pCambia1300-Pac1-indB-indC-pecM",
+        "gene-expression" : ["Gene 1: (indB - phosphatase (?) - indigoidine production)",
+        "Gene 2: (indC - non-ribosomal peptide synthetase - indigoidine production)",
+        "Gene 3: (pecM - metabolite exporter - indigoidine cell exportation)"],
+        "organism" : "Chlamydomonas",
+        "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of all genes involved in the production (indB and indC) and exportation (pecM) of indigoidine. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" : "static/media/images/plasmid6.jpeg"
+    },
+    "7": {
+        "name" : "DinoIII-CA2-pUC",
+        "gene-expression" :"(CA2 - carbon anhydrase - CO2 fixation)",
+        "organism" :"Oxyrrhis marina",
+        "description" : "DinoIII-CA2 is a dinoflagellate expression system  for a dinoflagellate delta class carbonic anhydrase 2 as a mechanism of carbon dioxide concentration. This carbonic anhydrase isoform is so far found only in marine algae and associated in plasma membranes for the interconversion of HCO3− ions and CO2. The expressión cassette contain a predicted signal peptide followed by a signal peptidase site. ",
+        "route" : "static/media/images/plasmid7.jpeg"
+    },
+    "8": {
+        "name" : "DinoIII-CA2-pUC",
+        "gene-expression" :"(CA2 - carbon anhydrase - CO2 fixation)",
+        "organism" :"Symbiodinium",
+        "description" : "DinoIII-CA2 is a dinoflagellate expression system  for a dinoflagellate delta class carbonic anhydrase 2 as a mechanism of carbon dioxide concentration. This carbonic anhydrase isoform is so far found only in marine algae and associated in plasma membranes for the interconversion of HCO3− ions and CO2. The expressión cassette contain a predicted signal peptide followed by a signal peptidase site. ",
+        "route" : "static/media/images/plasmid7.jpeg"
+    },
+    "9": {
+        "name" :"DinoIII-pUC-Lcf",
+        "gene-expression" :"Lcf- Luciferase",
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates.",
+        "route" :"static/media/images/plasmid8.jpeg"
+    },
+    "10" : {
+        "name" :"DinoIII-pUC-Lcf",
+        "gene-expression" :"Lcf- Luciferase",
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates.",
+        "route" :"static/media/images/plasmid8.jpeg"
+    },
+    "11": {
+        "name" :"DinoIII-pUC-Lcf-CA2",
+        "gene-expression" :["Gene 1: CA2-carbonic anhydrase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid9.jpeg"
+    },
+    "12": {
+        "name" :"DinoIII-pUC-Lcf-CA2",
+        "gene-expression" :["Gene 1: CA2-carbonic anhydrase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid9.jpeg"
+    },
+    "13": {
+        "name" :"DinoIII-pUC-Lcf-PEPC",
+        "gene-expression" :["Gene 1: PEPC-phosphoenolpyruvate carboxylase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the PEPC gene in charge of CO2 fixation in microalgae. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid10.jpeg"
+    },
+    "14": {
+        "name" :"DinoIII-pUC-Lcf-PEPC",
+        "gene-expression" :["Gene 1: PEPC-phosphoenolpyruvate carboxylase",
+        "Gene 2: Lcf- Luciferase"],
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence in some species of Dinoflagellates, as well as the PEPC gene in charge of CO2 fixation in microalgae. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid10.jpeg"
+    },
+    "15": {
+        "name" :"DinoIII-pUC-Lcf-CA2-PEPC",
+        "gene-expression" :["Gene 1: CA2- carbonic anhydrase",
+        "Gene 2: PEPC- phosphoenolpyruvate carboxylase",
+        "Gene 3: Lcf- Luciferase"],
+        "organism" :"Oxyrrhis marina",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence, as well as the PEPC gene in charge of CO2 fixation in microalgae and the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid11.jpeg"
+    },
+    "16": {
+        "name" :"DinoIII-pUC-Lcf-CA2-PEPC",
+        "gene-expression" :["Gene 1: CA2- carbonic anhydrase",
+        "Gene 2: PEPC- phosphoenolpyruvate carboxylase",
+        "Gene 3: Lcf- Luciferase"],
+        "organism" :"Symbiodinium",
+        "description" :"Dinoflagellate synthetic plasmid including the expression system (promoter and terminator) constructed by iGEM Georgia State for the high expression of specific genes in Dinoflagellates. Includes the luciferase protein gene involved in the production of luminescence, as well as the PEPC gene in charge of CO2 fixation in microalgae and the CA2 gene that participates in the conversion of carbon dioxide and water into carbonic acid, protons and bicarbonate ions. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between genes.",
+        "route" :"static/media/images/plasmid11.jpeg"
+    }
+}
