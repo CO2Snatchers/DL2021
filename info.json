@@ -1,7 +1,7 @@
 {
     "0" : {
         "name": "pAM4787-CA2",
-        "gene-expression" : "(CA2 - carbon anhydrase - CO2 fixation)",
+        "gene-expression" : "(CA2 - carbonic anhydrase - CO2 fixation)",
         "organism" : "Chlamydomonas",
         "description" : "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of the CA2 carbon anhydrase gene.",
         "route" : "static/media/images/plasmid0.jpeg"
@@ -15,7 +15,7 @@
     },
     "2": {
         "name": "pAM4787-CA2-PEPC",
-        "gene-expression" : ["Gene 1: (CA2 - carbon anhydrase - CO2 fixation)",
+        "gene-expression" : ["Gene 1: (CA2 - carbonic anhydrase - CO2 fixation)",
         "Gene 2: (PEPC - phosphoenolpyruvate carboxylase - CO2 fixation)"],
         "organism" : "Chlamydomonas",
         "description": "Cyanobacteria synthetic plasmid including the Chlamydomonas reinhardtii high expression Psad promoter and the RBCS2 terminator to render the expression of both CA2 and PEPC genes. It is expected that the combination of both genes will enhance the fixation of CO2. A multicistronic expression is assembled within the cassette by inserting the F2A self-cleaving peptide between both genes.",
@@ -60,14 +60,14 @@
     },
     "7": {
         "name" : "DinoIII-CA2-pUC",
-        "gene-expression" :"(CA2 - carbon anhydrase - CO2 fixation)",
+        "gene-expression" :"(CA2 - carbonic anhydrase - CO2 fixation)",
         "organism" :"Oxyrrhis marina",
         "description" : "DinoIII-CA2 is a dinoflagellate expression system  for a dinoflagellate delta class carbonic anhydrase 2 as a mechanism of carbon dioxide concentration. This carbonic anhydrase isoform is so far found only in marine algae and associated in plasma membranes for the interconversion of HCO3− ions and CO2. The expressión cassette contain a predicted signal peptide followed by a signal peptidase site. ",
         "route" : "static/media/images/plasmid7.jpeg"
     },
     "8": {
         "name" : "DinoIII-CA2-pUC",
-        "gene-expression" :"(CA2 - carbon anhydrase - CO2 fixation)",
+        "gene-expression" :"(CA2 - carbonic anhydrase - CO2 fixation)",
         "organism" :"Symbiodinium",
         "description" : "DinoIII-CA2 is a dinoflagellate expression system  for a dinoflagellate delta class carbonic anhydrase 2 as a mechanism of carbon dioxide concentration. This carbonic anhydrase isoform is so far found only in marine algae and associated in plasma membranes for the interconversion of HCO3− ions and CO2. The expressión cassette contain a predicted signal peptide followed by a signal peptidase site. ",
         "route" : "static/media/images/plasmid7.jpeg"
