@@ -13,15 +13,15 @@
         <div id="menu" class="flex flex-grow justify-evenly items-center gap-x-3 m-0 p-0" style="font-size: 3vw">
           <p><a href="index.html" class="no-underline hover:underline">Home</a></p>
           <p><a href="repository.html" class="no-underline hover:underline">Repository</a></p>
-          <p><a href="contact.asp" class="no-underline hover:underline">BioSafety</a></p>
-          <p><a href="about.asp" class="no-underline hover:underline">Contact Us</a></p>
+          <p><a class="no-underline hover:underline">BioSafety</a></p>
+          <p><a class="no-underline hover:underline">Contact Us</a></p>
         </div>
       </div>
   </div>
   <div id="hide-content" class="">
     <div id="content" class="flex m-4 text-1xl">
       <div class="flex flex-grow">
-        <form class="flex-grow">
+        <form class="flex" style="">
             <select id="select-database" class="p-2 bg-green-100" onchange=selectionDatabase()>
                 <option value="">Choose category of Database</option>
                 <option value="organism">Organism</option>
@@ -30,34 +30,30 @@
                 <option value="conditions">Conditions</option>
             </select>
         </form>
-        <div id="search-bar" class="flex-grow text-1xl">
-          <input type="text" class="border-2 p-2" placeholder="Search... (This function is not available)">
+        <div id="search-bar" class="flex-grow text-1xl w-auto">
+          <input type="text" class="border-2 p-2 w-80 ml-4" placeholder="Search... (This function is not available)">
         </div>
       </div>
-    </div>
-    <div class="h-44">
     </div>
     <div class="flex pl-4 text-1xl">
       <p id="te" class="invisible">You chose <span class="text-red-700" id="selection-text"></span></p>
     </div>
-    <div class="grid grid-cols-3 m-4 text-1xl">
-      <form id="select-0" class="invisible">
+    <div class="m-4 text-1xl">
+      <form id="select-0" class="invisible p-1">
         <select name="product-database" id="selection-0" class="p-2 bg-green-100" onchange=dropdown(this.id)>
             
         </select>
       </form>
-      <form id="select-1" class="invisible">
+      <form id="select-1" class="invisible p-1">
         <select name="product-organism" id="selection-1" class="p-2 bg-green-100" onchange=dropdown(this.id)>
       
         </select>
       </form>
-      <form id="select-2" class="invisible">
+      <form id="select-2" class="invisible p-1">
         <select name="product-organism" id="selection-2" class="p-2 bg-green-100" onchange=dropdown(this.id)>
             
         </select>
       </form>
-    </div>
-    <div class="h-40">
     </div>
     <button id="next-button" class="bg-green-100 ml-4 text-1xl invisible px-8 py-4 rounded-md" onclick=gotoPlasmids()>Next</button>
   </div>
@@ -73,71 +69,50 @@
       </p>
     </div>
     <ol class="list-decimal list-inside text-1xl pl-8 pt-8">
-      <li class="pb-12" id="bacteria-1">Chlamydomonas reinhardtii <button id="bac-1-button" class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
-      <li class="pb-12" id="bacteria-2">Oxyrrhis marina <button id="bac-2-button" class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
-      <li class="pb-12" id="bacteria-3">Symbiodinium <button id="bac-3-button" class="bg-green-100 ml-4 text-3xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
+      <li class="pb-12" id="bacteria-1">Chlamydomonas reinhardtii <button id="bac-1-button" class="bg-green-100 ml-4 text-1xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
+      <li class="pb-12" id="bacteria-2">Oxyrrhis marina <button id="bac-2-button" class="bg-green-100 ml-4 text-1xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
+      <li class="pb-12" id="bacteria-3">Symbiodinium <button id="bac-3-button" class="bg-green-100 ml-4 text-1xl px-8 py-4 rounded-md" onclick=plasmidSelected(this.id)>choose</button></li>
     </ol>
   </div>
   <div id="display-info" class="hidden">
-    <div class="flex pl-4 text-1xl pb-8">
-      <p class="" id="chosen-plasmid">You chose 
+    <div class="flex pl-4 pr-4 text-1xl pb-4">
+      <p class="py-4" id="chosen-plasmid">You chose 
       
       </p>
     </div>
-    <div class="flex" id="display-all">
-      <div class="flex flex-col pl-4 text-1xl pb-8">
-        <p class="text-2xl">
+    <div class="flex" id="display-all" style="position: relative; margin-left: auto; margin-right: auto; width: 95vw;">
+      <div class="flex flex-col pl-4 pr-4 text-1xl pb-4">
+        <p class="text-1xl p-4">
           The following plasmid has been generated:
         </p>
-        <img id="plasmid-image" class="w-80 mt-8">
-        <button class="bg-green-100 ml-4 text-2xl px-8 py-4 rounded-md">See more</button>
-        <p>
-          Reference: CO2 Snatchers
-        </p>
+        <img id="plasmid-image" class="" style="width: 42vw; margin-left: 0.5vw; margin-right: 0.5vw;">
+        <button class="bg-green-100 mx-8 my-1 text-1xl px-2 py-2 rounded-md" onclick="showMorePlasmid()">See more</button>
       </div>
-      <div class="flex flex-col pl-4 text-1xl pb-8">
-        <p class="text-1xl">
+      <div class="flex flex-col pl-4 pr-4 text-1xl pb-4">
+        <p class="text-1xl p-4">
           The expected behaviour follows this model:
         </p>
-        <img src="static/media/images/model.jpeg" class="w-80 mt-8">
-        <button>See more</button>
-        <p>
-          Reference: CO2 Snatchers
-        </p>
+        <img src="static/media/images/model.jpeg" style="width: 42vw; margin-left: 0.5vw; margin-right: 0.5vw;">
+        <button class="bg-green-100 mx-8 my-1 text-1xl px-2 py-2 rounded-md" onclick="showMoreModel()">See more</button>
       </div>
     </div>
-    <div class="flex flex-col" id="information">
-      <div class="grid grid-cols-2 ml-4 hidden" id="plasmid-info">
-        
-          <img src="test.png" class="w-80 mt-8">
-        
-          <p class="text-1xl">
-            Description:<br>
-            <span>Lorem ipsHola ayer fui a comerum dolor sit amet, consectetur adipiscing elit, sed 
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-              culpa qui officia deserunt mollit anim id est laborum.</span>
+      
+    <div class="flex" id="information" style="position: relative; margin-left: auto; margin-right: auto; width: 95vw;">
+      <div class="flex flex-col pl-4 pr-4 text-1xl pb-4 hidden" id="plasmid-info" style="max-width: 45vw">
+        <p class="text-1xl p-4" >
+          Description of the Plasmid
+        </p>
+      </div>
+      <div class="flex flex-col pl-4 pr-4 text-1xl pb-4 hidden" id="model-info" style="max-width: 45vw">
+        <p class="text-1xl p-4" style="max-width: 45vw">
+          Description of the Model
+        </p>
+          <p class="text-1xl p-4">
+            Hill's equation is used to model the expression of the gene of interest. It uses the central dogma of molecular biology to determine that the concentration of the protein in the living system is proportional to the amount of mRNA expressed by the organism, which in turn is proportional to the amount of the Gene available in the organism (viable genetic information for reading by the transcription machinery).
           </p>
       </div>
-      <div class="grid grid-cols-2 ml-4 hidden" id="model-info">
-        
-        <img src="test2.png" class="w-80 mt-8">
+    </div>
       
-        <p class="text-1xl">
-          Description:<br>
-          <span>Following the model from ..--,,..--.. , an expected behaviour for “gene 1” was simulated.</span>
-        </p>
-    </div>
-      <p class="text-1xl ml-4">
-        Reference: CO2 Snatchers
-        <span id="uni-1">university</span>
-        <span id="res-1">researcher</span>
-        <span id="uni-2">university</span>
-      </p>
-    </div>
   </div>
   <footer id="footer" class="flex w-full justify-evenly" style="background-color: #62bd69">
     <div class="flex flex-col items-center mt-1 mb-1">
@@ -297,7 +272,7 @@ var data = {
         "route" :"static/media/images/plasmid11.jpeg"
     }
 };
-  
+    
   function selectionDatabase(){ 
     let selDatabase = document.getElementById("select-database").value;
     let disDatabase = document.getElementById("select-database").options[document.getElementById("select-database").selectedIndex].text
@@ -544,60 +519,83 @@ var data = {
             if (selDatabase1 == "sele1-gen0") { // None
                 if (selDatabase2 == "sele2-gen0" && plasmidName == "Chlamydomonas reinhardtii") { // None
                     document.getElementById("plasmid-image").src = data.first.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.first.description+'</p>'
                 } else if (selDatabase2 == "sele2-gen0" && plasmidName == "Oxyrrhis marina") { // None
                     document.getElementById("plasmid-image").src = data.eighth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.eighth.description+'</p>'
                 } else if (selDatabase2 == "sele2-gen0" && plasmidName == "Symbiodinium") { // None
                     document.getElementById("plasmid-image").src = data.nineth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.nineth.description+'</p>'
                 }
             } else if (selDatabase1 == "sele1-gen1") { // PEPC - phosphoenolpyruvate carboxylase - CO2 fixation
                 if (selDatabase2 == "sele2-gen0") { // None
                     document.getElementById("plasmid-image").src = data.third.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.third.description+'</p>'
                 } else if (selDatabase2 == "sele2-gen1" && plasmidName == "Oxyrrhis marina") { // Lcf - Luciferase - Bioluminescence
                     document.getElementById("plasmid-image").src = data.sixteenth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.sixteenth.description+'</p>'
                 } else if (selDatabase2 == "sele2-gen1" && plasmidName == "Symbiodinium") { // Lcf - Luciferase - Bioluminescence
                     document.getElementById("plasmid-image").src = data.seventeenth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.seventeenth.description+'</p>'
                 }
             } else if (selDatabase1 == "sele1-gen2") { // Lcf - Luciferase - Bioluminescence
                     document.getElementById("plasmid-image" && plasmidName == "Oxyrrhis marina").src = data.twelfth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.twelfth.description+'</p>'
             } else if (selDatabase1 == "sele1-gen2") { // Lcf - Luciferase - Bioluminescence
                     document.getElementById("plasmid-image" && plasmidName == "Symbiodinium").src = data.thirdteenth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.thirdteenth.description+'</p>'
             }
       } else if (selDatabase == "sele-gen1") { // PEPC - phosphoenolpyruvate carboxylase - CO2 fixation
             if (selDatabase1 == "sele1-gen0") { // None
                 document.getElementById("plasmid-image").src = data.second.route;
+                document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.second.description+'</p>'
             } else if (selDatabase1 == "sele1-gen2" && plasmidName == "Oxyrrhis marina") { // Lcf - Luciferase - Bioluminescence
                 document.getElementById("plasmid-image").src = data.fourteenth.route;
+                document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.fourteenth.description+'</p>'
             } else if (selDatabase1 == "sele1-gen2" && plasmidName == "Symbiodinium") { // Lcf - Luciferase - Bioluminescence
                 document.getElementById("plasmid-image").src = data.fifteenth.route;
+                document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.fifteenth.description+'</p>'
             }
       } else if (selDatabase == "sele-gen2") { // Lcf - Luciferase - Bioluminescence
             if (selDatabase1 == "sele1-gen0") { // None
                 if (selDatabase2 == "sele2-gen0" && plasmidName == "Oxyrrhis marina") { // None
                     document.getElementById("plasmid-image").src = data.tenth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.tenth.description+'</p>'
                 } else if (selDatabase2 == "sele2-gen0" && plasmidName == "Symbiodinium") {
                     document.getElementById("plasmid-image").src = data.eleventh.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.eleventh.description+'</p>'
                 }
             }
       } else if (selDatabase == "sele-gen3") { // indA - glycosynthase (?) - indigoidine production
             if (selDatabase1 == "sele1-gen3") { // indB - phosphatase (?) - indigoidine production
                 if (selDatabase2 == "sele2-gen2") { // indC - non-ribosomal peptide synthetase + pecM - metabolite exporter
                     document.getElementById("plasmid-image").src = data.fourth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.fourth.description+'</p>'
                 } else if (selDatabase2 == "sele2-gen3") { // pecM - metabolite exporter - indigoidine cell exportation
                     document.getElementById("plasmid-image").src = data.fifth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.fifth.description+'</p>'
                 }
             } else if (selDatabase1 == "sele1-gen4") { // indC - non-ribosomal peptide synthetase - indigoidine production
                 if (selDatabase2 == "sele2-gen3") { // pecM - metabolite exporter - indigoidine cell exportation
                     document.getElementById("plasmid-image").src = data.sixth.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.sixteenth.description+'</p>'
                 }
             }
       } else if (selDatabase == "sele-gen4") { // indB - phosphatase (?) - indigoidine production
             if (selDatabase1 == "sele1-gen4") { // indC - non-ribosomal peptide synthetase - indigoidine production<
                 if (selDatabase2 == "sele2-gen3") { // pecM - metabolite exporter - indigoidine cell exportation
                     document.getElementById("plasmid-image").src = data.seventh.route;
+                    document.getElementById("plasmid-info").innerHTML +='<p class="text-1xl p-4">'+data.seventh.description+'</p>'
                 }
             }
       }
   }
+    function showMorePlasmid() {
+        document.getElementById("plasmid-info").classList.toggle("hidden",false);
+    }
+    function showMoreModel() {
+        document.getElementById("model-info").classList.toggle("hidden",false);
+    }
   
 </script>
 
